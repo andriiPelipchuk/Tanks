@@ -27,6 +27,10 @@ public class PlayerMove : MonoBehaviour
         Direction();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Crush");
+    }
     private void Direction()
     {
         if(Input.GetKey(KeyCode.S))
@@ -48,8 +52,4 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Crush");
-    }
 }

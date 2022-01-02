@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Pathfinding {
 
+    public static Pathfinding Instance { get; private set; }
+
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
-    public static Pathfinding Instance { get; private set; }
 
     private Grid<PathNode> grid;
     private List<PathNode> openList;
@@ -94,7 +95,10 @@ public class Pathfinding {
 
         return null;
     }
-
+    public PathNode GetNode(int x, int y)
+    {
+        return grid.GetGridObject(x, y);
+    }
     private List<PathNode> GetNeighbourList(PathNode currentNode) {
         List<PathNode> neighbourList = new List<PathNode>();
 
@@ -112,10 +116,6 @@ public class Pathfinding {
         if (currentNode.y + 1 < grid.GetHeight()) neighbourList.Add(GetNode(currentNode.x, currentNode.y + 1));
 
         return neighbourList;
-    }
-
-    public PathNode GetNode(int x, int y) {
-        return grid.GetGridObject(x, y);
     }
 
     private List<PathNode> CalculatePath(PathNode endNode) {

@@ -10,6 +10,22 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
 
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+
+    public void SetTargetPosition(Vector3 targetPosition)
+    {
+        currentPathIndex = 0;
+        pathVectorList = Pathfinding.Instance.FindPath(GetPosition(), targetPosition);
+
+        if (pathVectorList != null && pathVectorList.Count > 1)
+        {
+            pathVectorList.RemoveAt(0);
+        }
+    }
+
     private void Update()
     {
         HandleMovement();
@@ -49,22 +65,6 @@ public class CharacterPathfindingMovementHandler : MonoBehaviour
     private void StopMoving()
     {
         pathVectorList = null;
-    }
-
-    public Vector3 GetPosition()
-    {
-        return transform.position;
-    }
-
-    public void SetTargetPosition(Vector3 targetPosition)
-    {
-        currentPathIndex = 0;
-        pathVectorList = Pathfinding.Instance.FindPath(GetPosition(), targetPosition);
-
-        if (pathVectorList != null && pathVectorList.Count > 1)
-        {
-            pathVectorList.RemoveAt(0);
-        }
     }
 
 }

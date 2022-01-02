@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 838401795536373600}
   - component: {fileID: 1426782668}
   - component: {fileID: 6238568271990300650}
+  - component: {fileID: 2873399859632400576}
   m_Layer: 10
   m_Name: Red Base
   m_TagString: Untagged
@@ -205,3 +206,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 5
   armor: 5
+  popUp: {fileID: 0}
+--- !u!50 &2873399859632400576
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838401795536373607}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

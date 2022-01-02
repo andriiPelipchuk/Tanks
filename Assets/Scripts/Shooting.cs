@@ -6,8 +6,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject projectile;
-    [SerializeField] int damage;
-    [SerializeField] float shotDistance;
+    [SerializeField] private float shotDistance;
 
     private bool recharge = true;
 
@@ -28,7 +27,7 @@ public class Shooting : MonoBehaviour
         {
             var specificInstance = Instantiate(projectile, gun.position, transform.rotation);
             var projectileTransfer = specificInstance.GetComponent<Projectile>();
-            projectileTransfer.DataTransfer(shotDistance, damage);
+            projectileTransfer.DataTransfer(shotDistance);
             recharge = false;
             StartCoroutine(Recharge());
             

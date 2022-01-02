@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Testing : MonoBehaviour {  
+public class AStar : MonoBehaviour {  
     public CharacterPathfindingMovementHandler characterPathfinding;
     public GameObject targetPosition;
     public Pathfinding pathfinding;

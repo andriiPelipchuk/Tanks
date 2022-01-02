@@ -6,8 +6,7 @@ public class Projectile : MonoBehaviour
 {
     private float shotDistance;
     private Vector3 startPosition;
-    private int damage;
-    private int speed = 5;
+    private int speed = 10;
 
     private void OnEnable()
     {
@@ -21,13 +20,13 @@ public class Projectile : MonoBehaviour
         }
         transform.position = transform.position + -transform.right * speed * Time.deltaTime;
     }
-    public void DataTransfer(float distance, int transferDamage)
-    {
-        shotDistance = distance;
-        damage = transferDamage;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
     }
+    public void DataTransfer(float distance)
+    {
+        shotDistance = distance;
+    }
+
 }

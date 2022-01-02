@@ -7,7 +7,6 @@ public class InstallationTanks : MonoBehaviour
     [SerializeField] private TeamsType _teamType;
     [SerializeField] private TeamsType _enemyTeamType;
     [SerializeField] private GameObject _enemyBase;
-    [SerializeField] private Testing testing;
     
     [Header("Turcks")]
     [SerializeField] private GameObject trucks;

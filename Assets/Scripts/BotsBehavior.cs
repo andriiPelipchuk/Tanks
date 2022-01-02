@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class BotsBehavior : MonoBehaviour
 {
-	private string _enemyTag;
+    public Transform target;
+
+    private string _enemyTag;
 	private GameObject _enemyBase;
 	private GameObject[] _enemies;
     private CharacterPathfindingMovementHandler _characterPathfinding;
@@ -14,7 +16,6 @@ public class BotsBehavior : MonoBehaviour
 	private float compareNumber;
 	private float choseEnemy = 100f;
 
-	public Transform target;
 
 	private void Start()
 	{
